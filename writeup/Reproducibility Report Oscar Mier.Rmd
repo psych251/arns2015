@@ -1,7 +1,7 @@
 ---
 title: "Reproducibility report for Arns 2015 by EGG analytic pipeline to predict treatment outcome in patients with depression (2022, Psychological Science)"
 author: "Oscar D. Mier (omier@Stanford.edu)"
-date: "`r format(Sys.time(Pacific Time), 'October 09, 2022')`"
+date: "10/09/2022"
 output:
   html_document:
     toc: yes
