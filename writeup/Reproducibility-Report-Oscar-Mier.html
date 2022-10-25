@@ -13,7 +13,7 @@
 
 <meta name="date" content="2022-10-09" />
 
-<title>Reproducibility report for Arns 2015 by EGG analytic pipeline to predict treatment outcome in patients with depression (2022, Psychological Science)</title>
+<title>Reproducibility report for Arns 2015 by EGG analytic pipeline to predict treatment outcome in patients with depression (2022, Neuropsychopharmacology)</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -1373,23 +1373,17 @@ overflow-y: auto;
 border: 1px solid #ddd;
 border-radius: 4px;
 }
-.tabset-dropdown > .nav-tabs > li.active:before {
-content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+content: "\e259";
 font-family: 'Glyphicons Halflings';
 display: inline-block;
 padding: 10px;
 border-right: 1px solid #ddd;
 }
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-content: "";
-border: none;
-}
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-content: "";
+content: "\e258";
 font-family: 'Glyphicons Halflings';
-display: inline-block;
-padding: 10px;
-border-right: 1px solid #ddd;
+border: none;
 }
 .tabset-dropdown > .nav-tabs > li.active {
 display: block;
@@ -1499,7 +1493,7 @@ font-size: 0.95em;
 
 <h1 class="title toc-ignore">Reproducibility report for Arns 2015 by EGG
 analytic pipeline to predict treatment outcome in patients with
-depression (2022, Psychological Science)</h1>
+depression (2022, Neuropsychopharmacology)</h1>
 <h4 class="author">Oscar D. Mier (<a href="mailto:omier@Stanford.edu" class="email">omier@Stanford.edu</a>)</h4>
 <h4 class="date">10/09/2022</h4>
 
@@ -1522,7 +1516,7 @@ University. There are large neuroimaging databases available; therefore,
 focusing on learning how to analyze that mass data will be the most
 beneficial since I have extensive experience obtaining neuroimaging and
 clinical data.</p>
-<p>The EEG data exisits within the international Study to Predict
+<p>The EEG data exists within the international Study to Predict
 Optimized Treatment in Depression (iSPOT-D) database. I have obtained
 access to that data by reaching out to one of the data managers of that
 study and requesting non PHI data access. The stimuli in that sample
@@ -1538,8 +1532,7 @@ was determined through the Hamilton depression scale. The anticipated
 challenges will be correcting for multiple comparisons, rACC source
 localization with EEG data, and replicating the data analyzing pipeline
 with newer versions of the eLORETA software utilized in the data
-analysis phase of the study. The link to the software is the following:
-<a href="http://www.uzh.ch/keyinst/loreta.htm" class="uri">http://www.uzh.ch/keyinst/loreta.htm</a>.</p>
+analysis phase of the study.</p>
 <p><strong>Clarify key analysis of interest here</strong> You can also
 pre-specify additional analyses you plan to do.</p>
 <ul>
@@ -1563,17 +1556,38 @@ reproduce these result(s)? If so please, list them here.</p>
 </div>
 <div id="links" class="section level3">
 <h3>Links</h3>
-<p>Project repository (on Github): <a href="https://github.com/psych251/arns2015" class="uri">https://github.com/psych251/arns2015</a></p>
+<p>eLORETA EEG localization software: <a href="http://www.uzh.ch/keyinst/loreta.htm" class="uri">http://www.uzh.ch/keyinst/loreta.htm</a>. Project repository
+(on Github): <a href="https://github.com/psych251/arns2015" class="uri">https://github.com/psych251/arns2015</a></p>
 <p>Original paper (as hosted in your repo): <a href="https://github.com/psych251/arns2015/tree/main/original_paper" class="uri">https://github.com/psych251/arns2015/tree/main/original_paper</a></p>
+<p>Python: <a href="https://www.python.org/downloads/" class="uri">https://www.python.org/downloads/</a> MNE Library: <a href="https://mne.tools/stable/index.html" class="uri">https://mne.tools/stable/index.html</a> NumPy: <a href="https://numpy.org/" class="uri">https://numpy.org/</a></p>
 </div>
 </div>
 <div id="methods" class="section level2">
 <h2>Methods</h2>
-<ul>
-<li>EEG eLORETA analyses.</li>
-<li>resting state eyes closed EEG.</li>
-<li>Hamilton 17 depression rating scale.</li>
-</ul>
+<p>The original paper used EEG eLORETA software for signal localization
+and power spectral analysis (PSA).The participants conducted resting
+state eyes closed EEG sessions.The participants depression states were
+determined from Hamilton 17 depression rating scale. A score of greater
+than or equal to 16 meant the participants were depressed. Remission was
+defined as a score of less than or equal to 7 on the HRSD17 scale at the
+8-week time point. Treatment response was less than 50% on the HRSD17
+scale. Furthermore, the original data is from the international study to
+predict optimized treatment in depression (iSPOT-D), a multi-center,
+international, randomized, prospective practical trial. The original
+study had a ecological validity perspective which influenced them to not
+have a placebo control group to mimic real-world practice. At baseline
+visit the study used a mini-international neuropsychiatric interview
+(MINI-Plus) to diagnose the participants with nonpsychotic MDD. After
+baseline visit, participants were randomized into different treatment
+groups. The treatment period lasted 8-weeks. Participants underwent EEG
+sessions at baseline and at the end of treatment. EEG data was acquired
+from 26 channels: Fp1, Fp2, F7, F3, Fz, F4, F8, FC3, FCz, FC4, T3, C3,
+Cz, C4, T4m CP3, CPz, CP4, T5, P3, Pz, P4, T6, 01, Oz, and O2. The
+resting eyes closed EEG sessions were approximately 2 minutes. For
+investigating treatment prediction, a repeated measure ANOVA was
+conducted with within-subject factors site (Frontal and rACC). When
+significant interactions were found, univariate analyses were
+performed.</p>
 <div id="description-of-the-steps-required-to-reproduce-the-results" class="section level3">
 <h3>Description of the steps required to reproduce the results</h3>
 <p>Please describe all the steps necessary to reproduce the key
@@ -1581,23 +1595,34 @@ result(s) of this study. (1) Obtain EEG data and Hamiliton scale rating
 scores. (2) Seperate data into four groups: - SSRI treatment response
 group - SSRI treatment non-response group - SNRI treatment response
 group - SNRI treatment non-response group (3) Create analyzing pipeline
-- quality control: remove artifacts - brain masking (making the brains
-the same sizes) - localize regions of interests in EEG data (tissue
-classification and segmentation) - statistical analysis (4) Push data
-through pipeline</p>
+- quality control: remove artifacts - sampling rate of all channels was
+500 Hz. - Low pass filter = 100 Hz - High pass filter = 0.3 Hz - Notch
+filters of 50 or 60 Hz. - segment data into 4s epochs (50% overlapping).
+- artefact removal. - With eLORETA software, extract 6.5-8Hz theta waves
+from the rACC and frontal voxels. - brain masking (making the brains the
+same sizes) - localize regions of interests in EEG data (tissue
+classification and segmentation) - Power Spectral Analysis* (4) Push
+data through pipeline</p>
 </div>
 <div id="differences-from-original-study" class="section level3">
 <h3>Differences from original study</h3>
-<ul>
-<li>Versions of software</li>
-<li>Writing the analyzing pipeline code in the same method as the
-original paper</li>
-</ul>
+<p>Versions of software and writing the analyzing pipeline code in the
+same method as the original paper will be challenging. This
+reprodcibility study is using the following Python libraries: MNE
+version 1.2.1 for EEG analysis and visualization, and NumPy version
+1.23.0. This replica study is using a MacBook Pro (2021) with an Apple
+M1 Pro chip, 16 GB Memory, and with macOS Monterey version 12.6. The
+macOS contains Python version 3.9.13 running on PyCharm 2022.2.2
+(community Edition). VM for PyCharm is OpenJDK 64-Bit Server VM by
+JetBrains s.r.o.</p>
 <p>Explicitly describe known differences in the analysis pipeline
 between the original paper and yours (e.g., computing environment). The
 goal, of course, is to minimize those differences, but differences may
 occur. Also, note whether such differences are anticipated to influence
 your ability to reproduce the original results.</p>
+</div>
+<div id="results-in-original-paper" class="section level3">
+<h3>Results in original paper</h3>
 </div>
 </div>
 <div id="project-progress-check-1" class="section level2">
@@ -1613,10 +1638,10 @@ your reproduction and how this outcome will be computed.</p>
 reproduce the key result(s) of this study. Please describe your progress
 on each of these steps (e.g., data preprocessing, model fitting, model
 evaluation).</p>
+<ul>
+<li>Obtained data from iSPOTD.</li>
+</ul>
 </div>
-</div>
-<div id="results" class="section level2">
-<h2>Results</h2>
 <div id="data-preparation" class="section level3">
 <h3>Data preparation</h3>
 <p>Data preparation following the analysis plan.</p>

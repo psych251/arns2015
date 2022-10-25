@@ -1,0 +1,11 @@
+name: Publish Document
+title:
+username:
+account: rpubs
+server: rpubs.com
+hostUrl: rpubs.com
+appId: https://api.rpubs.com/api/v1/document/953953/08551fbff79f459ab80160d949b62577
+bundleId: https://api.rpubs.com/api/v1/document/953953/08551fbff79f459ab80160d949b62577
+url: http://rpubs.com/omier/953953
+when: 1666712131.99867
+lastSyncTime: 1666712131.99868

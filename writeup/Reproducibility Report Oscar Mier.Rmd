@@ -79,6 +79,7 @@ Versions of software and writing the analyzing pipeline code in the same method 
 Explicitly describe known differences in the analysis pipeline between the original paper and yours (e.g., computing environment). The goal, of course, is to minimize those differences, but differences may occur. Also, note whether such differences are anticipated to influence your ability to reproduce the original results. 
 
 ### Results in original paper
+The result of interest in the original paper is the theta wave density relationship to treatment response. significant correlations were found between HRSD17 scores and rACC theta waves at the 8-week timepoint. P = 0.21; r = 0.093, and DF = 608. 
 
 ## Project Progress Check 1
 
@@ -91,8 +92,7 @@ Please describe the outcome measure for the success or failure of your reproduct
 
 Earlier in this report, you described the steps necessary to reproduce the key result(s) of this study. Please describe your progress on each of these steps (e.g., data preprocessing, model fitting, model evaluation).
 
-
-## Results
+- Obtained data from iSPOTD.
 
 ### Data preparation
 
