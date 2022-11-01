@@ -14,13 +14,15 @@ output:
 
 ## Introduction
 
-Replication of Arns et al (2015)'s, "Frontal and rostral anterior cingulate (rACC) EEG in depression: Implications for treatment outcome?" My research interests consist of clinical and translational neuroscience-informed precision psychiatry research. More specifically, resting state electroencephalogram brain biomarkers to predict treatment outcomes in patients with depression and post-traumatic stress disorder. I chose this paper because it allows me to directly explore that field, develop my EEG data analytical skills, and I am highly interested in the precision psychiatry research of Dr. Leanne Williams at Stanford University. There are large neuroimaging databases available; therefore, focusing on learning how to analyze that mass data will be the most beneficial since I have extensive experience obtaining neuroimaging and clinical data.
+Reproduction of Arns et al (2015)'s, "Frontal and rostral anterior cingulate (rACC) EEG in depression: Implications for treatment outcome?" My research interests consist of clinical and translational neuroscience-informed precision psychiatry research. More specifically, resting state electroencephalogram brain biomarkers to predict treatment outcomes in patients with Major Depressive Disorder (MDD). I chose this paper because it allows me to directly explore that field, develop my EEG data analytical skills, and I am interested in Dr. Leanne Williams's precision psychiatry research at Stanford University School of Medicine. There are large neuroimaging and neurophysiological databases available; therefore, focusing on learning how to analyze that mass data will be the most beneficial since I have extensive experience obtaining neuroimaging and clinical data.
 
-The EEG data exists within the international Study to Predict Optimized Treatment in Depression (iSPOT-D) database. I have obtained access to that data by reaching out to one of the data managers of that study and requesting non PHI data access. The stimuli in that sample were Sertaline and extended-release Venlafaxine treatments in an eight-week period with baseline resting state EEG sessions. There are two key analyses in the original paper: first, to determine if resting state eyes closed electroencephalogram (rsEEG) low theta waves within the rostral anterior cortex and frontal cortex correlate with Sertraline treatment response in the sample; secondly, to determine if rsEEG low theta waves in the right frontal and medial-frontal area predict treatment outcome with extended-release Venlafaxine. Treatment response was determined through the Hamilton depression scale. The anticipated challenges will be correcting for multiple comparisons, rACC source localization with EEG data, and replicating the data analyzing pipeline with newer versions of the eLORETA software utilized in the data analysis phase of the study. 
+The EEG data exists within the international Study to Predict Optimized Treatment in Depression (iSPOT-D) database. I have obtained access to that data by reaching out to one of the data managers of that study and requesting non PHI data access. The stimuli in that sample were Sertaline and extended-release Venlafaxine treatments in an eight-week period with baseline resting state EEG sessions. Sertaline is a selective serotonin reuptake inhibitor (SSRI). Venlafaxine XR is a serotonin-norepinephrine reuptake inhibitor (SNRI) 
+
+There are two key analyses in the original paper: first, to determine if resting state eyes closed electroencephalogram (rsEEG) low theta waves within the rostral anterior cortex and frontal cortex correlate with Sertraline and Venlafaxine XR treatment response and remission in the sample; secondly, to determine if rsEEG low theta waves in the right frontal and medial-frontal area predict treatment outcome with extended-release Venlafaxine. Treatment response was determined through the Hamilton Rating Scale for Depression 17 (HRSD17). The anticipated challenges will be correcting for multiple comparisons, preprocessing the EEG data, rACC source localization with EEG data, and replicating the data analyzing pipeline with newer versions of the eLORETA software utilized in the data analysis phase of the study.   
 
 **Clarify key analysis of interest here**  You can also pre-specify additional analyses you plan to do.
 
-* Written above in introduction
+Current phasic theta wave desnity in the rostral anterior cingulate (rACC) estimated by eLORETA.
 
 ### Justification for choice of study
 
@@ -46,12 +48,12 @@ NumPy: https://numpy.org/
 
 ## Methods
 
-The original paper used EEG eLORETA software for signal localization and power spectral analysis (PSA).The participants conducted resting state eyes closed EEG sessions.The participants depression states were determined from Hamilton 17 depression rating scale. A score of greater than or equal to 16 meant the participants were depressed. Remission was defined as a score of less than or equal to 7 on the HRSD17 scale at the 8-week time point. Treatment response was less than 50% on the HRSD17 scale. Furthermore, the original data is from the international study to predict optimized treatment in depression (iSPOT-D), a multi-center, international, randomized, prospective practical trial. The original study had a ecological validity perspective which influenced them to not have a placebo control group to mimic real-world practice. At baseline visit the study used a mini-international neuropsychiatric interview (MINI-Plus) to diagnose the participants with nonpsychotic MDD. After baseline visit, participants were randomized into different treatment groups. The treatment period lasted 8-weeks. Participants underwent EEG sessions at baseline and at the end of treatment. EEG data was acquired from 26 channels: Fp1, Fp2, F7, F3, Fz, F4, F8, FC3, FCz, FC4, T3, C3, Cz, C4, T4m CP3, CPz, CP4, T5, P3, Pz, P4, T6, 01, Oz, and O2. The resting eyes closed EEG sessions were approximately 2 minutes. For investigating treatment prediction, a repeated measure ANOVA was conducted with within-subject factors site (Frontal and rACC). When significant interactions were found, univariate analyses were performed. 
+The original paper used EEG eLORETA software for source localization and for investigating treatment prediction, a repeated measure ANOVA was conducted with within-subject factors site (Frontal and rACC). When significant interactions were found, univariate analyses were performed. .The participants conducted resting state eyes closed EEG sessions for two minutes at baseline visit and at the week-eight timepoint.The participants depression states, response to treatment, and remission state were determined from HRSD17. A score of greater than or equal to 16 meant the participants were depressed. Remission was defined as a score of less than or equal to 7 on the HRSD17 scale at the 8-week time point. Treatment response was less than 50% on the HRSD17 scale from the baseline visit. Furthermore, the original data is from iSPOT-D which a multi-center (20 sites), international, randomized, prospective practical trial. The original study had a ecological validity perspective which influenced them to not have a placebo control group to mimic real-world practice. At baseline visit the study used a mini-international neuropsychiatric interview (MINI-Plus) to diagnose the participants with nonpsychotic MDD. After baseline visit, participants were randomized into different treatment groups. The treatment period lasted 8-weeks. Participants underwent EEG sessions at baseline and at the end of treatment. EEG data was acquired from 26 channels: Fp1, Fp2, F7, F3, Fz, F4, F8, FC3, FCz, FC4, T3, C3, Cz, C4, T4m CP3, CPz, CP4, T5, P3, Pz, P4, T6, 01, Oz, and O2. 
 
 ### Description of the steps required to reproduce the results
 
 Please describe all the steps necessary to reproduce the key result(s) of this study.
-(1) Obtain EEG data and Hamiliton scale rating scores.
+(1) Obtain resting state eyes closed EEG data and HSRD17 scores.
 (2) Seperate data into four groups:
   - SSRI treatment response group
   - SSRI treatment non-response group
@@ -62,24 +64,28 @@ Please describe all the steps necessary to reproduce the key result(s) of this s
   - sampling rate of all channels was 500 Hz.
   - Low pass filter = 100 Hz
   - High pass filter = 0.3 Hz
-  - Notch filters of 50 or 60 Hz. 
+  - Notch filters of 50 or 60 Hz.
+  - Electrooculgram (EOG)-corrected using a regression-based technique.  
   - segment data into 4s epochs (50% overlapping).
-  - artefact removal. 
+  - artefact removal: EMG detection, pulse and baseline shift detection, crosstalk detection,     high kurtosis, extreme power level detection, residual eye blink detection, and extreme       voltage swing detection. 
+  - Use a spherical spine interpolation to replace rejected channels. 
   - With eLORETA software, extract 6.5-8Hz theta waves from the rACC and frontal voxels. 
   - brain masking (making the brains the same sizes)
   - localize regions of interests in EEG data (tissue classification and segmentation)
-  - Power Spectral Analysis* 
+  - Power Spectral Analysis*
+  - log transform theta measures before statistical analysis. 
 (4) Push data through pipeline 
 
 
 ### Differences from original study
 
-Versions of software and writing the analyzing pipeline code in the same method as the original paper will be challenging. This reprodcibility study is using the following Python libraries: MNE version 1.2.1 for EEG analysis and visualization, and NumPy version 1.23.0. This replica study is using a MacBook Pro (2021) with an Apple M1 Pro chip, 16 GB Memory, and with macOS Monterey version 12.6. The macOS contains Python version 3.9.13 running on PyCharm 2022.2.2 (community Edition). VM for PyCharm is OpenJDK 64-Bit Server VM by JetBrains s.r.o. 
+Versions of software and writing the analyzing pipeline code in the same method as the original paper will be challenging. This reprodcibility study is using the following Python libraries: MNE version 1.2.1 for EEG analysis and visualization, and NumPy version 1.23.0. This replica study is using a MacBook Pro (2021) with an Apple M1 Pro chip, 16 GB Memory, and with macOS Ventura 13.0 version. The macOS contains Python version 3.9.13 running on PyCharm 2022.2.2 (community Edition). VM for PyCharm is OpenJDK 64-Bit Server VM by JetBrains s.r.o. 
 
 Explicitly describe known differences in the analysis pipeline between the original paper and yours (e.g., computing environment). The goal, of course, is to minimize those differences, but differences may occur. Also, note whether such differences are anticipated to influence your ability to reproduce the original results. 
 
 ### Results in original paper
-The result of interest in the original paper is the theta wave density relationship to treatment response. significant correlations were found between HRSD17 scores and rACC theta waves at the 8-week timepoint. P = 0.21; r = 0.093, and DF = 608. 
+
+The result of interest in the original paper is the phasic theta wave density relationship to treatment response. significant correlations were found between HRSD17 scores and rACC theta waves at the 8-week timepoint. P = 0.21; r = 0.093, and DF = 608. 
 
 ## Project Progress Check 1
 
@@ -92,7 +98,9 @@ Please describe the outcome measure for the success or failure of your reproduct
 
 Earlier in this report, you described the steps necessary to reproduce the key result(s) of this study. Please describe your progress on each of these steps (e.g., data preprocessing, model fitting, model evaluation).
 
-- Obtained data from iSPOTD.
+- Obtained ~ 400 rsEEG data and HSRD17 scores from iSPOTD.
+- Stored EEG data in cloud storage (Amazon AWS).
+- Requested and obtained access to eLORETA software.
 
 ### Data preparation
 
